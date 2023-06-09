@@ -163,6 +163,15 @@ extension UIView {
 
     func layoutSkeletonLayerIfNeeded() {
         guard let skeletonLayer = _skeletonLayer else { return }
+        let newActions = [
+                "onOrderIn": NSNull(),
+                "onOrderOut": NSNull(),
+                "sublayers": NSNull(),
+                "contents": NSNull(),
+                "bounds": NSNull(),
+                "frame": NSNull(),
+            ]
+        skeletonLayer.contentLayer.actions = newActions
         skeletonLayer.layoutIfNeeded()
     }
     
